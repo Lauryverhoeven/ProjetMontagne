@@ -383,6 +383,22 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>browse_button</sender>
+   <signal>clicked()</signal>
+   <receiver>Parameters_Dialog</receiver>
+   <slot>browse_files()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>472</x>
+     <y>552</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>472</x>
+     <y>575</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>on_ok()</slot>
