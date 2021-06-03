@@ -17,13 +17,14 @@ Entre 10h-25h par semaine par personne.
 
 Telecharger le zip du projet, et l' extraire dans un repertoire tel que `/path/to/folder`.
 
-Se placer dans le repertoire `/path/to/folder/ProjetIccPerso`.
+Se placer dans le repertoire `/path/to/folder/ProjetMontagne`.
 
 Pour compiler le projet, executer les commandes suivantes :
 
 ```
-qmake ProjetIccPerso.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug
-make clean -j4 in /path/to/folder/build-ProjetIccPerso-Desktop-Debug
+qmake: qmake ProjetIccPerso.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug
+Make: make in /path/to/folder/build-ProjetIccPerso-Desktop-Debug
+//make clean -j4 in /path/to/folder/build-ProjetIccPerso-Desktop-Debug
 ```
 
 Pour executer l' application, taper la commande suivante :
@@ -36,7 +37,11 @@ Pour executer l' application, taper la commande suivante :
 
 Telecharger le zip du projet, et l' extraire dans un repertoire tel que `/path/to/folder`.
 
-Ouvrir le logiciel QTCreator, cliquer sur "Nouveau Projet" puis "Importer un projet existant". Selectionner le projet. Aller dans "Ouvrir un projet" et ouvrir le projet qui vient d'être créé. Compiler le projet. 
+Ouvrir le logiciel QTCreator, cliquer sur "Ouvrir Projet" puis trouver le projet. Selectionner le projet. Ouvrir le .pro et configurer le projet.
+
+### Option 3 : 
+
+Ouvrir le logiciel QTCreator, cliquer sur "Nouveau projet", choisir "Importer un projet". Choisir git clone et mettre ce lien pour configerer le projet:
 
 ## Remarques et commentaires : 
 
