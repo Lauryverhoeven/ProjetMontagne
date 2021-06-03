@@ -8,6 +8,8 @@
 #include <fstream>
 using namespace std;
 
+//Ça marche pas parce que le constructeur du systeme a changé. 
+
 int main() {
     //std::ostream& flot(ostream&);
     //TextViewer t(flot);
