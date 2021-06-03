@@ -31,11 +31,6 @@ public:
     virtual void dessine(ChaineDeMontagnes const& a_dessiner) = 0;
     virtual void dessine(Montagne_pointu const& a_dessiner) = 0;
 
-    /* Mettre ici toutes les méthodes nécessaires pour dessiner tous les
-     * objets que l'on veut dessiner. Par exemple :
-     *    virtual void dessine(Nounours const& a_dessiner) = 0;
-     *    virtual void dessine(Voiture  const& a_dessiner) = 0;
-     */
 };
 
 #endif //PROGICC_SUPPORTADESSIN_H

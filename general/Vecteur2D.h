@@ -13,17 +13,17 @@
 class Vecteur2D{
 public:
     explicit Vecteur2D(double x=0, double y=0);
-    [[nodiscard]] bool compare(Vecteur2D v) const;
+    bool compare(Vecteur2D v) const;
     void afficher(std:: ostream& out) const;
-    [[nodiscard]] double getx() const{ return x;}
-    [[nodiscard]] double gety() const{ return y;}
-    [[nodiscard]] Vecteur2D oppose() const;
-    [[nodiscard]] double norme() const;
-    [[nodiscard]] double norme2() const;
-    [[nodiscard]] Vecteur2D unitaire() const;
+    double getx() const{ return x;}
+    double gety() const{ return y;}
+    Vecteur2D oppose() const;
+    double norme() const;
+    double norme2() const;
+    Vecteur2D unitaire() const;
     Vecteur2D& operator+=(const Vecteur2D& c);
     Vecteur2D& operator-=(const Vecteur2D &c);
-    [[nodiscard]] double produitScalaire(Vecteur2D) const;
+    double produitScalaire(Vecteur2D) const;
 
 private:
     double x;

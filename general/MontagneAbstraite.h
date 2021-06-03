@@ -9,7 +9,6 @@
 class MontagneAbstraite {
 public:
     virtual double altitude(double ,double ) const=0; //methode virtuelle pure surchargée dans les sous classes de MontagneAbstraite
-   // virtual double altitude2() const=0;
     virtual ~MontagneAbstraite(){}
 };
 

@@ -18,7 +18,6 @@
 class SupportADessin;
 class Systeme : public Dessinable {
 private :
-    //Montagne Everest;
     ChaineDeMontagnes everest;
     champPotentiels champpot;
     Ciel ciel;
@@ -29,19 +28,15 @@ public :
     double getAltitude(int i, int j) const;
     //constructeur qui initialise la montagne puis le champpotentiel puis le ciel
     Systeme(unsigned int Nx, unsigned int Ny, unsigned int Nz, double lambda,
-            double ventinfini,double de, double dep, std:: vector<MontagneAbstraite*> const& chaine);//std:: vector<MontagneAbstraite*> const& chaine
-    //Contenu.h trouve dans le tutoriel
-    //void demarre(double delta_t, double delta, double delta_prime,SupportADessin& support);
+            double ventinfini,double de, double dep, std:: vector<MontagneAbstraite*> const& chaine);
     void demarre(unsigned int Nx, unsigned int Ny, unsigned int Nz, double lambda, double ventinfini, double de, double dep,std::vector<MontagneAbstraite *> chaine2);
 
     void affiche(std:: ostream& out=std::cout) const;
     void evolue(double delta_t);
     void resoudre();
     
-    virtual ~Systeme() = default;  //le destructuer du systeme cause le probleme de segmentation comme
-    // j'utilise qqch que je detruis. Probablement comme je cree chaine de montagne dans un premier temps
-    // il le detruit le premier mais ça doit survivre longtemps
-    Systeme(Systeme &)=default; //enleve const
+    virtual ~Systeme() = default;
+    Systeme(Systeme &)=default;
     Systeme& operator=(Systeme const&) = default;
     Systeme(Systeme&&)                 = default;
     Systeme& operator=(Systeme&&)      = default;

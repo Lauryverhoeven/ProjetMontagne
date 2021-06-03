@@ -14,7 +14,6 @@
 #include <array>
 #include <fstream>
 #include <iostream>
-#include <utility>
 
 class Montagne_pointu: public MontagneAbstraite, public Dessinable {
 private :

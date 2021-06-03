@@ -36,7 +36,6 @@ void champPotentiels::initialise_champ(unsigned int Nx, unsigned int Ny, unsigne
     toblerone.initialise_chaine(Nx, Ny, Toblerone);
     this->ventinfini = ventinfini;
 
-    //collection.erase(collection.begin(),collection.end());
     collection.clear();
 
     for(unsigned int i(0); i < getNx(); ++i) {
@@ -112,7 +111,6 @@ void champPotentiels::afficheLap() const{
     for (int i(1); i < getNx(); ++i) {
         for (int j(1); j < getNy() ; ++j) {
             for (int k(1); k < getNz(); ++k) {
-                //cout << fixed << defaultfloat;
                 cout << i << " " << j << " " << k << " " << collection[i][j][k].getLap().getx() << " "
                      << collection[i][j][k].getLap().gety() << endl;
             }

@@ -50,8 +50,6 @@ Montagne_pointu::Montagne_pointu(const string &InputFile) : fichier(InputFile){
     int x, y, z;
 
     array<int,3> valeurs{};
-    //getline(MyReadFile, def) ;
-    //cout << def << endl;
 
     while (entree >> a >> b >> c) {
         stringstream geek1(a);
@@ -63,8 +61,6 @@ Montagne_pointu::Montagne_pointu(const string &InputFile) : fichier(InputFile){
 
         valeurs[0]=x;
         valeurs[1]=y;
-
-        //if(isnan(c)){valeurs[2]=0;}
 
         if(!c.compare("nan")) {
             valeurs[2] = 0;
