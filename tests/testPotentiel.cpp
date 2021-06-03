@@ -9,7 +9,7 @@
 using namespace std;
 
 
-//Ça marche pas parce que le constructeur du champPotentiels ont changé.
+//Ça marche pas parce que le constructeur du champPotentiels a changé.
 
 int main() {
 
