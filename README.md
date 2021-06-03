@@ -51,7 +51,7 @@ Nous avons affiché une montagne/chaine de montagnes (marron) avec de la neige (
 Touches fleches (haut, bas, gauche, droite)
 
 ### Effectuer une rotation de la montagne : 
-Touches E, Q, A, S, D, W
+Touches E, Q, A, D, W zoom in, S zoom out
 
 ### Mettre l' animation en pause : 
 Touche espace 
@@ -84,4 +84,4 @@ x0 = 20, y0 = 2, H = 15, sigma_x = 8 ,sigma_y = 4
 
 Ces valeurs seront proposées directement lors du démarrage du programme. 
 
-Nous laissons à l'utilisateur une possibilité pour choisir de manière libre les paramètres de la montagne/chaine de montagnes.
+Nous laissons à l'utilisateur une possibilité pour choisir de manière libre les paramètres de la montagne/chaine de montagnes ou un montagne pointu (à browser depuis les fichiers).
