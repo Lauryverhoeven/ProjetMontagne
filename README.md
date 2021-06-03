@@ -1,5 +1,5 @@
 # Questions: 
-1)jusqu'où avez-vous été ? qu'est-ce que vous avez fait/pas fait ?
+1) jusqu'où avez-vous été ? qu'est-ce que vous avez fait/pas fait ?
 On a fini tout ceux qui sont comptés pour la barème et on a fait le classe montagne_pointu (cervin) en tant que optionnel. 
 
 2) avez-vous une version graphique ? Si oui, avec quelle bibliothèque graphique (Qt (quelle version ?), WxWidget, SDL, Glut, autre [précisez]) ?
