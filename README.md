@@ -9,7 +9,7 @@ On a utilisé Qt (version 5.9.5), c'est-à-dire celle sur la VM.
 Entre 10h-25h par semaine par personne. 
 
 
-# ProjetIccPerso
+# Projet
 
 ## Compilation et éxecution : 
 
