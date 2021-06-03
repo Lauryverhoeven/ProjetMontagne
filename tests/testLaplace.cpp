@@ -11,7 +11,7 @@ using namespace std;
 
 int main() {
 
-//Ça marche pas parce que le constructeur du champPotentiels ont changé. Et ça n'a plus aucun sens comme on fait tout ces calcules dans le contructeur. 
+//Ça marche pas parce que le constructeur du champPotentiels a changé. Et ça n'a plus aucun sens comme on fait tout ces calcules dans le contructeur. 
         
         Montagne m(15, 15, 15, 5 ,5, 20.0/29.0);
         champPotentiels cp(30, 30, 30, 20.0 / 29.0, m, 20);
