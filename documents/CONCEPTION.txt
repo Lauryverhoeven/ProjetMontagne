@@ -34,4 +34,13 @@ Constantes : Facilite la programmation en définissant les valeurs des constante
 
 Support_a_dessin : Ce sur quoi est desssiné le système.
 
+Vue_Open_GL : Méthodes supplémentaires pour faciliter l'utilisation du Support_a_dessin
+
+Mountain_Tab : Lors de la compilation une fenetre s'affiche pour laisser l'utilisateur entrer les parametres de la simulation. Sur cette fenetre il y a des onglets pour choisir les parametres de chaque montagne. La classe Mountain_Tab gère ces onglets. Elle permet de recuperer les valeurs des attributs de la montange pour ensuite construire cette montagne. Ses attributs sont des SpinBox et des Label pour chaque attribut de la montagne (cela nous permet d'afficher le nom de l'attribut et de rentrer les valeurs dans la fenetre des parametres (parameters_dialog.ui)). Elle possède aussi des getters.
+
+Parameters_dialog : Contient des méthodes qui communiquent directement avec la fenetre des parametres (parameters_dialog.ui) afin de définir les actions qui se déroulent à chaque fois qu'une touche est pressée dans cette fenetre. 
+
+Mainwindow : Affiche à l'écran la fenêtre des paramètres et contient une méthode displayMountains qui va permettre d'initialiser le systeme et ainsi afficher la fenetre dans laquelle le systeme evolue. 
+
+Parameters : Son rôle est de donner les parametres du Systeme entrés par l'utilisateur à la methode displayMountains de la classe Mainwindow. 
 
