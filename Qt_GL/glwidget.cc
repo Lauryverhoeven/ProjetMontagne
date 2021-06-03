@@ -12,12 +12,46 @@ void GLWidget::initializeGL()
 {
   vue.init();
   timerId = startTimer(1000);
+
+ vue.rotate(15.0, -3.0, 0.0, 0.0);
+ vue.rotate(35.0, 0.0, +7.0, 0.0);
+ vue.translate( 25.0, 0.0, 0.0);
+ vue.rotate(35.0, 0.0, +7.0, 0.0);
+ vue.translate( 25.0, 0.0, 0.0);
+ vue.rotate(35.0, 0.0, 0.0, +7.0);
+ vue.rotate(20.0, -4.0, 0.0, 0.0);
+ vue.rotate(35.0, 0.0, +7.0, 0.0);
+ vue.translate( 15.0, 0.0, 0.0);
+ vue.rotate(30.0, 0.0, +7.0, 0.0);
+ vue.translate( 15.0, 0.0, 0.0);
+ vue.translate( 0.0, 0.0, -7.0);
+ vue.rotate(15.0, 0.0, 0.0, +3.0);
+ vue.rotate(15.0, +3.0, 0.0, 0.0);
+ vue.translate( 0.0, -4.0, 0.0);
+ vue.translate( 0.0, 0.0, -3.0);
+ vue.rotate(5.0, -1.0, 0.0, 0.0);
+
+
+  //key A
+  //vue.translate( 250, 0.0, 0.0);
+  //key fleche droit
+  //vue.rotate(15.0, 0.0, +3.0, 0.0);
+  //key E
+  //vue.rotate(25.0, 0.0, 0.0, +1.0);
+  //key F
+  //vue.translate(0.0, 5.0, 0.0);
+  //key up
+  //vue.rotate(10.0, -2.0, 0.0, 0.0);
+
+
+  /*
   vue.rotate(30.0, 0.0, -1.0, 0.0);
   vue.rotate(30.0,0.0,1.0,0.0);
   vue.rotate(15.0, -1.0, 0.0, 0.0);
   vue.rotate(15.0, 0.0, 0.0,  -1.0);
   vue.rotate(15.0, +1.0, 0.0, 0.0);
   vue.rotate(15.0, -1.0, 0.0, 0.0);
+  */
 }
 
 // ======================================================================

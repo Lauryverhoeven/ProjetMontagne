@@ -20,7 +20,7 @@ void Vecteur2D::afficher(ostream &out) const {
 
 }
 
-//surcharge operator + (addition vectorielle) defini avec friend
+//surcharge operateur + (addition vectorielle) defini avec friend
 Vecteur2D operator+(Vecteur2D p, const Vecteur2D& q){
     Vecteur2D result;
     result.x=p.x+q.x;
@@ -28,12 +28,12 @@ Vecteur2D operator+(Vecteur2D p, const Vecteur2D& q){
     return result;
 }
 
-//surcharge operator += (addition vectorielle) defini a partir de +
+//surcharge operateur += (addition vectorielle) defini a partir de +
 Vecteur2D &Vecteur2D::operator+=(const Vecteur2D &c) {
     return *this=*this+c;
 }
 
-//surcharge operator - (soustraction vectorielle) defini avec friend
+//surcharge operateur - (soustraction vectorielle) defini avec friend
 Vecteur2D operator-(Vecteur2D p, const Vecteur2D& q){
     Vecteur2D result;
     result.x=p.x-q.x;
@@ -41,12 +41,12 @@ Vecteur2D operator-(Vecteur2D p, const Vecteur2D& q){
     return result;
 }
 
-//surcharge operator -= (soustraction vectorielle) defini a partir de -
+//surcharge operateur -= (soustraction vectorielle) defini a partir de -
 Vecteur2D &Vecteur2D::operator-=(const Vecteur2D &c) {
     return *this=*this-c;
 }
 
-//surcharge operator << qui uilise la methode affiche
+//surcharge operateur << qui uilise la methode affiche
 ostream& operator<<(ostream& sortie , Vecteur2D complex){
     complex.afficher(sortie);
     return sortie;
@@ -92,7 +92,7 @@ double Vecteur2D::produitScalaire( Vecteur2D autre) const {
     return (x*autre.getx()+y*autre.gety());
 }
 
-//surcharge oparator * pour la multiplication externe avec les scalaires (a droit)
+//surcharge operateur * pour la multiplication externe avec les scalaires (a droit)
 Vecteur2D operator*(Vecteur2D p, const double& q){
     Vecteur2D result;
     result.x=p.x*q;
@@ -100,31 +100,31 @@ Vecteur2D operator*(Vecteur2D p, const double& q){
     return result;
 }
 
-//surcharge oparator * pour la multiplication externe avec les scalaires (a gauche)
+//surcharge operateur * pour la multiplication externe avec les scalaires (a gauche)
 Vecteur2D operator*(double q, const Vecteur2D& p){
     return p*q;
 }
 
-//surcharge oparator == qui utilise la methode compare
+//surcharge operateur == qui utilise la methode compare
 bool operator==(Vecteur2D p, const Vecteur2D &q) {
     return p.compare(q);
 }
 
-//surcharge oparator * pour la produit scalaire (multiplication interne) avec les vecteurs (a gauche)
+//surcharge operateur * pour la produit scalaire (multiplication interne) avec les vecteurs (a gauche)
 double operator*(Vecteur2D p, const Vecteur2D& q){
     return p.produitScalaire(q);
 }
 
-//surcharge oparator ~ qui renvoie la vecteur unitaire avec la methode unitaire
+//surcharge operateur ~ qui renvoie la vecteur unitaire avec la methode unitaire
 Vecteur2D operator~(Vecteur2D p){
     return p.unitaire();
 }
-//surcharge oparator - qui renvoie l'oppose avec la methode oppose
+//surcharge operateur - qui renvoie l'oppose avec la methode oppose
 Vecteur2D operator-(Vecteur2D p){
     return p.oppose();
 }
 
-//surcharge oparator != pour la comparaison de deux vecteurs avec la methode compare
+//surcharge operateur != pour la comparaison de deux vecteurs avec la methode compare
 bool operator!=(Vecteur2D p, const Vecteur2D &q) {
     return not(p.compare(q));
 }

@@ -20,6 +20,7 @@ QMatrix4x4 matrice;
   for(int i(0); i < a_dessiner.getN()[0]; ++i) {
     for(int j(0); j < a_dessiner.getN()[1]; ++j) {
 
+      //on dessine d abord la pluie
         if(a_dessiner.flaque_deau(i,j)) {
             matrice.setToIdentity();
              matrice.rotate(15.0, -30.0, 45.0, 80.0);
@@ -28,12 +29,16 @@ QMatrix4x4 matrice;
 
         } else {
 
+     //on dessine ensuite le sol cest a dire le point ou l altitude est zero
+
        if(a_dessiner.getAltitude(i,j) == 0.0) {
             matrice.setToIdentity();
              matrice.rotate(15.0, -30.0, 45.0, 80.0);
             matrice.translate(offsetx +i, offsetz+a_dessiner.getAltitude(i,j),offsety+j);
             dessineCube(matrice, color_floor);
         }
+
+       //on dessine la montagne (neige en dessus de 10)
 
         matrice.setToIdentity();
          matrice.rotate(15.0, -30.0, 45.0, 80.0);
@@ -45,6 +50,8 @@ QMatrix4x4 matrice;
     }
 
   }
+
+    //on dessine finalement les nuages
 
  for(int i(0); i < a_dessiner.getN()[0]; ++i) {
       for(int j(0); j <  a_dessiner.getN()[1]; ++j) {
@@ -58,8 +65,6 @@ QMatrix4x4 matrice;
                     matrice.rotate(15.0, -30.0, 45.0, 80.0);
                    matrice.translate(offsetx+i, offsetz+k, offsety+j);
                    dessineCube(matrice, color_nuage);
-
-
 
               }
 
@@ -75,24 +80,17 @@ QMatrix4x4 matrice;
 
 void VueOpenGL::dessine(const Ciel &a_dessiner) {
 
-    //flot << a_dessiner; soit on surcharge le << soit on appel les methodes affiche
-
 }
 
 void VueOpenGL::dessine(const Montagne &a_dessiner) {
 
-    //flot << a_dessiner; soit on surcharge le << soit on appel les methodes affiche
-
 }
-void VueOpenGL::dessine(const ChaineDeMontagnes &a_dessiner) {
 
-    //flot << a_dessiner; soit on surcharge le << soit on appel les methodes affiche
+void VueOpenGL::dessine(const ChaineDeMontagnes &a_dessiner) {
 
 }
 
 void VueOpenGL::dessine(const Montagne_pointu &a_dessiner) {
-
-    //flot << a_dessiner; soit on surcharge le << soit on appel les methodes affiche
 
 }
 

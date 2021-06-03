@@ -16,11 +16,11 @@ Parameters_Dialog::Parameters_Dialog(MainWindow *parent)
     ui->setupUi(this);
     main=parent;
 
-    //construct the first mountain tab
+    //construit le premier onglet
     Mountain_Tab* first_tab = new Mountain_Tab;
     tabs.push_back(first_tab);
     ui->tabWidget->addTab(first_tab, "Montagne 1");
-    //remove the tab that was created by qtcreator
+    //enleve l onglet qui etait cree par defaut par QT
     ui->tabWidget->removeTab(0);
 }
 

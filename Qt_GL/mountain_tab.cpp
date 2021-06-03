@@ -35,7 +35,9 @@ Mountain_Tab::Mountain_Tab()
     sigma_i_label.setText("sigma i:");
     sigma_j_label.setText("sigma j:");
 
-    QGridLayout* layout = new QGridLayout; //permet de donner la disposition de chaque parametre dans l' onglet des parametres d' une montagne dans la fenetre des parametres
+    QGridLayout* layout = new QGridLayout;
+
+    //permet de donner la disposition de chaque parametre dans l' onglet des parametres d' une montagne dans la fenetre des parametres
 
     layout->addWidget(&i_zero_label,0,0); //le textbox " i0" va s' afficher a la coordonnee 0,0 de l onglet c' est a dire en haut
     layout->addWidget(&i_zero,0,1); //le case pour parametrer i0 va s' afficher a la coordonnee 0,1 c' est a dire a droite de la textbox precedente
