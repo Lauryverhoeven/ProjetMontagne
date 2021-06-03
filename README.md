@@ -1,3 +1,14 @@
+# Questions: 
+1)jusqu'où avez-vous été ? qu'est-ce que vous avez fait/pas fait ?
+On a fini tout ceux qui sont comptés pour la barème et on a fait le classe montagne_pointu (cervin) en tant que optionnel. 
+
+2) avez-vous une version graphique ? Si oui, avec quelle bibliothèque graphique (Qt (quelle version ?), WxWidget, SDL, Glut, autre [précisez]) ?
+On a utilisé Qt (version 5.9.5), celui sur VM. 
+
+3) combien d'heures en moyenne par personne par semaine estimez vous avoir passé sur le projet ? (essayez d'être objectif : n'oubliez pas qu'au début vous n'avez peut être pas fait grand chose, comptez sur 14 semaines, c.-à-d. la première semaine incluse, ne comptez pas le cours ni les exercices hors projet, n'oubliez pas de diviser le total par 2 car je veux une estimation moyenne par personne.)
+Entre 10h-25h par semaine par personne. 
+
+
 # ProjetIccPerso
 
 ## Compilation et éxecution : 
