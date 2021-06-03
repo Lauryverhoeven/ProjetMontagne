@@ -2,30 +2,36 @@ Un fichier CONCEPTION (à faire au fur et à mesure) décrivant la hiérarchie d
 
 Ce fichier peut être soit sous forme textuelle donnant simplement la liste des classes et leur relations, soit sous forme graphique (en utilisant par exemple inkscape).
 
-Le fichier Diagramme_conception.pdf visualise la conception expliqué en dessous. 
+Le fichier Diagramme_conception.pdf permet de visualiser la conception expliquée en dessous. 
 
 Echantillon : superclasse de Champ Potentiels et Ciel
-Permet de regrouper certains attributs communs tels que les dimensions de la boite et lambda
+Permet de regrouper certains attributs communs tels que les dimensions de la boite et le facteur lambda.
 
 Dessinable : superclasse de Systeme, Montagne, Ciel, ChaineDeMontagnes
 Permet de dessiner le systeme.
 
 MontagneAbstraite : superclasse de Montagne et ChaineDeMontagnes 
-Une classe virtuel pure qui contien un methode altitude virtuel et un destructeur virtuel.
+Une classe virtuelle pure qui contient une methode altitude virtuelle et un destructeur virtuel.
  -Montagne: Contient 6 double comme attribut et calcule l'altitude a partir de cela. 
- -ChaineDeMontagnes: Contient un vecteur de pointeur de montagne abstraire (vector<MontagneAbstraite*> chaine) et un vecteur qui contient des int (pour faire l'affichage de maniere autonome on a besion des dimensions.) 
+ -ChaineDeMontagnes: Contient un vecteur de pointeurs de montagne abstraite (vector<MontagneAbstraite*> chaine) et un vecteur de int (qui contient les dimensions de la boite) 
+ 
+Vecteur2D : Permet de representer facilement des vecteurs en deux dimensions.
 
-Potentiels: Contient 2 vecteur de deux dimension de laplacien et la potentiel.
+Potentiels: Contient 2 Vecteur2D representants les Laplacien et les potentiels.
 
-ChampPotentiel : Contient un boite 3D de potentiels (les valeurs de laplaciens et potentiels en tout espace). Contient un ChaineDeMontagne, un double ventinfini, et un boite qui contient la norme au carre de la vitesse partout en espace.
-Le but de ce classe c'est de calculer les vitesses partout en espace en fonction de ses attributs.
+ChampPotentiel : Contient une boite 3D de potentiels (les valeurs des Laplacien et des potentiels en tout point de l'espace). Contient un ChaineDeMontagne, un double ventinfini, et une autre boite 3D qui contient la norme au carre de la vitesse en tout point de l'espace.
 
-CubedAir : Une classe qui contient les valeurs importants pour la formation de la nuages et de la pluie dans un point precis en espace.
-Ciel : Une classe qui contient une boite qui contient les CubedAir partout en espace. C'est grace aux changements dans les valeurs des CubedAir qu'on observe des mouvements nuages.
+CubedAir : Represente un cube de ciel, contient via ses attributs les informations importantes pour la formation des nuages et de la pluie dans ce cube.
+C'est grace aux changements de valeur des attributs de CubedAir (le taux d'humidité surtout) qu'on observe le déplacement des nuages.
 
-Systeme: Systeme a comme attribut un ciel, un champPotentiel, et un ChaineDeMontagne. Grace à son methode evolue elle fait l'evolution du simulation au cours du temps. 
-Il suffit d'afficher le systeme qui contient tout les informations necessaires.
+Ciel : Possede une boite 3D qui contient tous les CubedAir, represente le ciel autour de la montagne. 
+
+Systeme: Permet de regrouper les classes présentées precedemment. Possède comme attribut un ciel, un champPotentiel, et un ChaineDeMontagne, c'est-à-dire toutes les classes Dessinable. Grace à sa methode evolue() elle permet l'evolution de la simulation au cours du temps. 
+
+TextViewer : Sert a faire l'affichage texte du systeme. 
+
+Constantes : Facilite la programmation en définissant les valeurs des constantes physiques nécessaires à la description des nuages dans le ciel.
+
+Support_a_dessin : Ce sur quoi est desssiné le système.
 
 
-Il y a aussi des classes isolées qui sont complémentaires et qui assure le bon deroulement du programme et qui facilite la programmation.
-Vecteur2D, support_a_dessin, Textviewer et constantes. 
