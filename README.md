@@ -41,7 +41,7 @@ Ouvrir le logiciel QTCreator, cliquer sur "Ouvrir Projet" puis trouver le projet
 
 ### Option 3 : 
 
-Ouvrir le logiciel QTCreator, cliquer sur "Nouveau projet", choisir "Importer un projet". Choisir git clone et mettre ce lien pour configerer le projet:
+Ouvrir le logiciel QTCreator, cliquer sur "Nouveau projet", choisir "Importer un projet". Choisir git clone et mettre ce lien pour configerer le projet: https://github.com/Lauryverhoeven/ProjetMontagne.git
 
 ## Remarques et commentaires : 
 
