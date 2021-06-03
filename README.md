@@ -43,21 +43,45 @@ Ouvrir le logiciel QTCreator, cliquer sur "Ouvrir Projet" puis trouver le projet
 
 Ouvrir le logiciel QTCreator, cliquer sur "Nouveau projet", choisir "Importer un projet". Choisir git clone et mettre ce lien pour configerer le projet: https://github.com/Lauryverhoeven/ProjetMontagne.git
 
-## Remarques et commentaires : 
+## Precisions sur l'affichage : 
 
-Les valeurs conseillées pour obtenir un résultat pertinent lors de l'execution du programme sont les suivantes :
+Nous avons affiché une montagne/chaine de montagnes (marron) avec de la neige (blanche) dessus lorsque l'altitude est haute. Ceci est entouré par une plaine (verte) et dans le ciel des nuages (gris) se déplacent dans le sens du vent. De la pluie (bleue) s'affiche également sur un cube du sol sous forme de "flaque d'eau" lorsque un certain taux d'humidité est atteint dans la colonne d'air surplombant ce cube. 
+
+### Se deplacer : 
+Touches fleches (haut, bas, gauche, droite)
+
+### Effectuer une rotation de la montagne : 
+Touches E, Q, A, S, D, W
+
+### Mettre l' animation en pause : 
+Touche espace 
+
+## Remarques : 
+
+Des valeurs conseillées pour obtenir un résultat pertinent lors de l'execution du programme sont les suivantes :
+
+Dimensions de la boite : 30x30x30 (ne pas excéder 50x50x50 sinon l'affichage devient lent)
+
+Dimensions de chaque cube de la boite : 20x20x20
+
+Vitesse du vent sur les bords : 20 
+
 ### Dans le cas de l'affichage d'une seule montagne : 
 
-x0 = 15, y0 = 15, H = 15, sigma_x = 5, sigma_y = 5
+Coordonnées du centre de la montagne : x0 = 15, y0 = 15
+
+Hauteur de la montagne : H = 15
+
+Etalement de la montagne selon les coordonnées x et y : sigma_x = 5, sigma_y = 5
 
 ### Dans le cas de l'affichage d'une chaine de montagnes composée de plusieurs montagnes : 
-lambda = 20.0/29.0
 #### Montagne 1 : 
 x0 = 15, y0 = 15, H = 18, sigma_x = 5, sigma_y = 10
 #### Montagne 2 :
-x0 = 2, y0 = 22, H = 12,sigma_x = 12 ,sigma y = 3
+x0 = 2, y0 = 22, H = 12,sigma_x = 12 ,sigma_y = 3
 #### Montagne 3 : 
 x0 = 20, y0 = 2, H = 15, sigma_x = 8 ,sigma_y = 4
 
-### NB : 
-Nous laissons cependant une option à l'utilisateur pour choisir librement les paramètres de la montagne/chaine de montagnes.
+Ces valeurs seront proposées directement lors du démarrage du programme. 
+
+Nous laissons à l'utilisateur une possibilité pour choisir de manière libre les paramètres de la montagne/chaine de montagnes.
