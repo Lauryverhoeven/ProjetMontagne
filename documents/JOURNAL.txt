@@ -1,0 +1,50 @@
+un fichier JOURNAL.txt résumant votre progression (où vous en êtes) et reportant (brièvement), semaine après semaine, ce que vous avez fait sur le projet (exemple ici).
+Cela permettra à votre groupe de mieux se coordonner et toujours savoir où vous en êtes.
+Soyez concis mais précis, clairs et objectifs (on peut très bien comprendre que, ponctuellement, telle ou telle semaine vous ayez eu d'autres contraintes et ayez moins avancé sur le projet).
+Vous pouvez également inclure vos états-d'âme.
+Veillez donc à bien mettre à jour votre JOURNAL chaque semaine (cela fera partie de la notation).
+
+
+SEMAINE 1 : 
+Nous avons écrit le code relatif à l'implémentation des vecteurs en 2D dans le projet. Nous avons créé la classe Vecteur2D avec un constructeur explicite et le destructeur par défaut. En utilisant le logiciel CLion, nous avons eu des difficultés pour écrire le fichier CMake (notamment pour la création des Library) mais nous avons finalement réussi à faire marcher l'ensemble en compilation separée avec les fichiers TestVecteur2D.cpp, Vecteur2D.cpp et Vecteur2D.h.
+
+
+SEMAINE 2 : 
+Nous avons surchargé les opérateurs +, +=, -, -= dans la classe vecteurs afin que l'addition et la soustraction des vecteurs nous donne les résultats suivants :
+Pour l'addition de deux vecteurs v1 et v2 : v1(x_1,y_1) + v2(x_2,y_2) = v3(x_1 + x_2, y_1 + y_2)
+Pour la soustraction de ces vecteurs : v1(x_1,y_1) - v2(x_2,y_2) = v3(x_1 - x_2, y_1 - y_2)
+De la même manière nous avons surchargé l'opérateur << afin d'afficher les coordonnées d'un vecteur et l'operateur * afin de réaliser le produit scalaire entre deux vecteurs.
+Nous avons également tenté cette semaine de s'initier à l'utilisation de QT Creator à l'aide du tutoriel fourni.
+
+
+SEMAINE 3 : 
+Nous avons continué à redéfinir les opérateurs pour transformer les méthodes de la classe Vecteur2D qui s'y prettent. 
+Nous avons créé la classe montagne avec ses attributs dans un nouveau fichier Montagne.cpp (associé à un header Montagne.h et un main TestMontagne.cpp). 
+Finalement nous avons essayé de nous familiariser avec le gnuplot. 
+
+
+SEMAINE 4 : 
+Nous avons affiché la montagne sur Gnuplot. 
+
+SEMAINE 5 : 
+Nous avons créé les classes ChampPotentiels et Potentiels et calculé les potentiels pour chaque petit cube avec la méthode initialise(). 
+
+SEMAINE 6 : 
+Nous avons calculé les Laplaciens dans resolution() par la méthode de relaxation donnée dans le complément mathématique.
+Nous avons créé les classes Ciels et CubedAir et nous avons créé la classe Echantillon qui est une superclasse de champPotentiels et Ciel (afin de regrouper les attributs communs et optimiser le code).
+
+SEMAINE 7 : Nous avons créé la classe CubedAir qui contient les constantes et les valeurs associés à chaque point de l'espace, ainsi que la classe Ciel qui contient un tableau dynamique tridimensionel de CubedAir. Ce tableau permet d'associer des caractéristiques à chaque cube de la boite. Nous avons un petit problème de précision dans les valeurs du ciel  mais notre affichage sur Gnuplot est en adéquation avec l'affichage demandé. Faute de pouvoir résoudre le problème, nous avons choisi de laisser les valeurs comme elles sont tant que cela nous donne des résultats cohérents. 
+
+SEMAINE 8 : Nous avons créé la classe Système qui prend comme argument un Ciel, un Montagne et un ChampPotentiel. Cela contient tout ce qu'il faut décrire pour notre simulation. Nous avons ecrit les methodes Affiche et Evolue. Nous avons eu des problèmes de segmentation fault dues à des problèmes de cohérence dans les dimensions de nos différents tableaux dynamiques. Nous avons implementé les classes Dessinable et SupportADessin mais nous avons eu du mal à comprendre le rôle de chaque classe, la hierarchie ainsi que les éléments donnés dans le tutoriel graphique. 
+
+SEMAINE 9 : Nous avons réussi a faire marcher les classes Dessinable et SupportADessin. Nous avons créé une classe TextViewer et nous avons réussi à créer un flot pour afficher nos valeurs dans un fichier. Nous avons commencé à écrire la methode demarre() et nous avons continué à lire/comprendre le tutoriel graphique. Nous avons eu énormément de mal à passer de CLion à Gnuplot à cause de problèmes de non compatibilité de nos versions de MacOs avec celle de Gnuplot et également car il a fallu comprendre comment changer le Cmake en Qmake. 
+
+SEMAINE 10 : Nous crée la classe MontagneAbstraite et la classe ChaineDeMontagnes. Les Montagne et les ChaineDeMontagnes sont des sous classes des MontagnesAbstraites. Une ChainedeMontagne contient un tableau dynamique de pointeurs contenant des Montagne simples. Nous avons réussi à afficher la Montagne sur QT Creator.
+
+SEMAINE 11 : Nous avons réussi à afficher les nuages. La situation initiale est bonne mais le déplacement des nuages après itération s'avère faux. Nous avons identifié des erreurs dans la méthode evolue() mais le déplacement est toujours faux. Nous avons recommencé la méthode evolue() avec différentes implémentations afin de tenter de corriger le probleme, ce qui a été vain. 
+
+SEMAINE 12 : Pour comprendre notre erreur, nous avons voulu verifier si notre vent allait dans le bon sens par rapport à la montagne et pour cela nous avons affiché le cube de coordonnées (0,0,0) en rouge. Nous avons également affiché les coordonnées de quelques cellules courantes ainsi que leur vent et leur cellules précedentes respectives afin de déterminer si nos calculs étaient bons. Grâce à cela nous avons identifié une erreur dans la methode calculant la cellule précedente et nous avons obtenu un deplacement de nuages identique avec celui presenté dans P13. Nous avons donc pu commencer à implémenter la pluie. 
+Nous avons également tenté de changer la montagne affichée en une chaine de montagnes.
+
+SEMAINE 13 : Nous avons pu afficher des chaines de montagne avec les nuages qui se déplacent et la pluie sous forme de flaque d'eau au sol. Nous avons remarqué qu'en prenant une boite de cubes de dimension plus grande que 30 (par exemple 60), l'affichage des chaines de montagne est beaucoup plus "propre". Cependant, sur la VM, ce grand nombre de cubes provoque un manque de fluidité dans le déplacement des nuages et l'écran met environ 1 minutes à s'afficher.  
+Nous avons commenté le code, changé le nom de certaines méthodes et vérifié les indentations afin de clarifier le code. Nous avons écrit les fichiers README et CONCEPTION afin de finaliser le projet. 

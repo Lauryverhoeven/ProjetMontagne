@@ -1,0 +1,82 @@
+[Question P1.1] Comment représentez-vous ces vecteurs ? Comment sont-ils organisés : quels attributs ? quelles méthodes ? quels droits d'accès ?
+
+On représente ces vecteurs comme des classes avec deux attributs privés : des "doubles" x et y  qui décrivent respectivement la premiere et la deuxieme coordonnée du vecteur en 2D. Elles sont uniquement accessibles par le programmeur developpeur.
+Les fonctionnalités liées à l'utilisation des vecteurs telles que afficher les coordonnées, faire une addition, une soustraction, calculer l'opposé, etc. sont declarées comme des méthodes publiques donc accessible pour le programmeur utilisateur. 
+
+
+[Question P4.1] Avez-vous ajouté un constructeur de copie ? Pourquoi (justifiez votre choix) ?
+
+Nous n'avons pas ajouté de constructeur de copie car nous avons estimé qu'utiliser le constructeur de copie par défaut qui fait seulement une copie de surface sufffisait à répondre aux besoins. En effet, les attributs de la classe Vecteur2D ne sont pas des pointeurs donc il n'y aura pas de problème lié à une désallocation de la mémoire lors de la destruction de l'instance construite par copie. 
+
+[Question P4.2] Si l'on souhaitait ajouter un constructeur par coordonnées polaires (un angle et une longueur),
+
+    a] que cela impliquerait-il au niveau des attributs de la classe ?
+    b] quelle serait la difficulté majeure (voire l'impossibilité) de sa réalisation en C++ ? (C'est d'ailleurs pour cela qu'on ne vous demande pas de faire un tel constructeur !)
+
+
+a) Il faudrait ajouter un double angle et un double longueur dans les attributs de la classe Vecteur2D afin de pouvoir appeler ces attributs avec le constructeur par coordonnées polaires. 
+
+b) Le problème serait qu'on aurait alors deux constructeurs prenant en argument deux "double". Ainsi, lors de la création d'une instance de la classe Vecteur2D avec un appel à un des deux constructeurs, il y aurait une ambiguité car le compilateur ne saurait pas lequel choisir. On ne saurait pas si les attributs initialisés sont x et y ou bien l'angle et la longueur.
+
+
+[Question P6.1] A ce stade, quels sont les attributs, méthodes et constructeurs de votre classe ChampPotentiel ? 
+
+La classe potentiel contient les attributs suivants : 
+    un array "cotes" contenant les longueurs L_x, L_y et L_z du cube
+    un array "nbCubes" décrivant le nombre de cubes N_x, N_y et N_z contenus dans les directions x, y et z
+    un double "lambda" contenant le pas d'échantillonage
+
+Les méthodes suivantes : 
+    Getters : 
+        getlambda() 
+    Setters : 
+        setlambda()
+
+Ainsi qu'un constructeur initialisant le pas d'échantillonage ainsi que le tableau "cotes" contenant les longueurs L_x, L_y et L_z
+
+
+[Question P7.1] Dans votre conception, la méthode iteration() est-elle public, protected ou private ?
+Justifiez votre réponse.
+
+Pour le moment la méthode iteration() est public car elle doit pouvoir être appelée par le programmeur utilisateur dans testpotentiels.cc mais à terme elle sera sûrement utilisée par la méthode résolution() et pourra donc être private ce qui renforcera l'encapsulation.
+
+[Question P7.2] Dans votre conception, comment/où est représenté le paramètre ε de l'équation (6) ?
+
+Le paramètre epsilon est un double pris en argument par la méthode iteration(). 
+
+[Question P7.3] Dans votre conception, les méthodes resolution() et vitesse() sont-elles public, protected ou private ?
+Justifiez votre réponse. 
+
+vitesse() est une méthode publique utilisée par affichepotvitesse() pour afficher pour chaque petit cube ses coordonnées i j k suivies de son potentiel suivant les coordonnées y et z de l'espace suivie de sa vitesse selon chaque coordonnée de l'espace. Nous l'avons rendue publique car nous avons anticipé le fait que nous en auront besoin la semaine prochaine pour calculer les vitesses du vent dans les cubes d'air.
+resolution() est une méthode publique utilisée dans testpotentiels.cc par le programmeur utilisateur pour recalculer les Laplaciens.
+
+[Question P8.1] Que vous inspire le paragraphe précédent ? Cela introduit-il d'autres classes ? Cela modifie-t-il votre conception précédente ? Si oui, comment et pourquoi ?
+
+Ce paragraphe nous indique que la classe Ciel a des attributs communs avec champPotentiels ce qui nous a conduit à repenser la hierarchie des classes. Nous avons crée une superclasse Echantillon qui est une superclasse pour Ciel et champPotentiels et qui regroupe ces attributs communs. 
+
+[Question P8.2] Parmi les grandeurs citées ci-dessus, lesquelles représentez-vous sous forme d'attributs et lesquelles sous forme de méthodes ? 
+
+Toutes ces grandeurs ont été représentées par des attributs car le constructeur de CubedAir ainsi que les constantes du fichier constantes.h suffisent à initialiser toutes ces grandeurs sans avoir besoin d'appeler de méthode. 
+
+
+[Question P9.1] En termes de POO, quelle est donc la nature de la méthode dessine_sur() ? 
+
+La méthode dessine_sur() est une méthode virtuelle pure qui s'inscrit dans le cadre du polymorphisme car il ne serait pas possible de définir une seule méthode pour tous les objets dessinables. 
+
+[Question P9.2] Quelle est la bonne façon de le faire dans un cadre de programmation orientée-objet ? 
+
+Il faut surcharger la méthode dans toutes les sous-classes de Dessinable (c'est-à-dire tous les objets dessinables) et faire une résolution dynamique des liens. 
+
+[Question P9.3] A quoi faut-il faire attention pour les classes contenant des pointeurs ? Quelles solutions peut-on envisager ? 
+
+Il faut faire attention à la portée des pointeurs et à la désallocation de la mémoire à la fin de la vie de l'instance. Pour cela on peut soit utiliser un destructeur soit un pointeur intelligent (unique_ptr).
+
+[Question P9.4] Comment représentez vous la classe Systeme ? Expliquez votre conception (attributs, interface, ...). 
+
+On a crée le Système en tant que classe qui réunit toutes les autres. L'idée est de pouvoir juste créer une instance de système et qu'à partir de là le programme fasse tous les calculs voulus afin d'afficher le résultat voulu (la montagne et le ciel).
+Les attributs de la classe système sont une Montagne, un Ciel et un champPotentiels. Le constructeur de Système initialise d'abord la Montagne qui sert à initialiser le champPotentiels. Ensuite on résout les équations de Laplace via les méthodes de champPotentiels et on peut ainsi construire le Ciel à partir de ces valeurs.
+Nous avons également ajouté des attributs delta et delta prime pour permettre de réduire le nombre de paramètres dans certaines méthodes.
+
+[Question P12.1] Comment représentez-vous ces nouveaux objets « chaînes de montagnes » ? Où s'incrivent-ils dans votre conception ? Quelle(s) classe(s) avez vous ajoutée(s) ? Cela change-t-il quelques choses aux montagnes que vous avez conçues jusqu'ici ?
+
+Avant de construire une chaine de montagne on a crée une classe abstraite pure qui s'appelle MontagneAbstraite. Ce classe ne contient que le methode virtuel altitude et un destructeur virtuel. Le but de faire cela était de pouvoir mettre des chaines des montagnes dans des chaines des montagnes. Donc pour l'accomplir on a mis un attribut de vecteur de pointeur de MontagneAbstraite dans la chaine de montagne. Grace à ce pointeur, on peut mettre dans la chaine tout ce qui hérite de MontagneAbstraite, y inclus la chaine de montagne. Les montagnes qui avaient était conçues n'ont pas changé sauf qu'elle est maintenant une sous classe de MontagneAbstraite. Après on a du faire de sorte que tout les classes qui prenait en tant qu'attribuit prennent des vector des pointeurs de montagne abstraite (ou une vecteur de référence sur un Montagne/chaine de montagne. 

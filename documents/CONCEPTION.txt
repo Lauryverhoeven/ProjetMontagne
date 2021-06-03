@@ -1,0 +1,31 @@
+Un fichier CONCEPTION (à faire au fur et à mesure) décrivant la hiérarchie de classes utilisée (relations d'héritage et d'encapsulation) et une brève justification de vos choix.
+
+Ce fichier peut être soit sous forme textuelle donnant simplement la liste des classes et leur relations, soit sous forme graphique (en utilisant par exemple inkscape).
+
+Le fichier Diagramme_conception.pdf visualise la conception expliqué en dessous. 
+
+Echantillon : superclasse de Champ Potentiels et Ciel
+Permet de regrouper certains attributs communs tels que les dimensions de la boite et lambda
+
+Dessinable : superclasse de Systeme, Montagne, Ciel, ChaineDeMontagnes
+Permet de dessiner le systeme.
+
+MontagneAbstraite : superclasse de Montagne et ChaineDeMontagnes 
+Une classe virtuel pure qui contien un methode altitude virtuel et un destructeur virtuel.
+ -Montagne: Contient 6 double comme attribut et calcule l'altitude a partir de cela. 
+ -ChaineDeMontagnes: Contient un vecteur de pointeur de montagne abstraire (vector<MontagneAbstraite*> chaine) et un vecteur qui contient des int (pour faire l'affichage de maniere autonome on a besion des dimensions.) 
+
+Potentiels: Contient 2 vecteur de deux dimension de laplacien et la potentiel.
+
+ChampPotentiel : Contient un boite 3D de potentiels (les valeurs de laplaciens et potentiels en tout espace). Contient un ChaineDeMontagne, un double ventinfini, et un boite qui contient la norme au carre de la vitesse partout en espace.
+Le but de ce classe c'est de calculer les vitesses partout en espace en fonction de ses attributs.
+
+CubedAir : Une classe qui contient les valeurs importants pour la formation de la nuages et de la pluie dans un point precis en espace.
+Ciel : Une classe qui contient une boite qui contient les CubedAir partout en espace. C'est grace aux changements dans les valeurs des CubedAir qu'on observe des mouvements nuages.
+
+Systeme: Systeme a comme attribut un ciel, un champPotentiel, et un ChaineDeMontagne. Grace à son methode evolue elle fait l'evolution du simulation au cours du temps. 
+Il suffit d'afficher le systeme qui contient tout les informations necessaires.
+
+
+Il y a aussi des classes isolées qui sont complémentaires et qui assure le bon deroulement du programme et qui facilite la programmation.
+Vecteur2D, support_a_dessin, Textviewer et constantes. 
