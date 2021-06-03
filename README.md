@@ -22,15 +22,16 @@ Se placer dans le repertoire `/path/to/folder/ProjetMontagne`.
 Pour compiler le projet, executer les commandes suivantes :
 
 ```
-qmake: qmake ProjetIccPerso.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug
-Make: make in /path/to/folder/build-ProjetIccPerso-Desktop-Debug
-//make clean -j4 in /path/to/folder/build-ProjetIccPerso-Desktop-Debug
+qmake 
+make 
+
 ```
 
 Pour executer l' application, taper la commande suivante :
 
 ```
-/path/to/folder/build-ProjetIccPerso-Desktop-Debug/Qt_GL/progICC_gl
+Qt_GL/progICC_gl 
+
 ```
 
 ### Option 2 : 
